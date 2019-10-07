@@ -43,7 +43,7 @@ def nnModelFunction(iMin, iMax, iStep, jMin, jMax, jStep, sMin, sMax, sStep):
         for x in np.arange(sMin,sMax,sStep):
             x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, train_size = x, random_state =100, shuffle = True)
            
-            nnModel = mlrose.NeuralNetwork(hidden_nodes =[10],activation='sigmoid', algorithm=nnOptAlgos[y], max_iters = 25, max_attempts=5,learning_rate = 0.01,early_stopping=True, random_state =10)
+            nnModel = mlrose.NeuralNetwork(hidden_nodes =[25],activation='sigmoid', algorithm=nnOptAlgos[y], max_iters = 50, max_attempts=5,learning_rate = 0.001,early_stopping=True, random_state =10)
             
             nnModel.fit(x_train, y_train)
             y_train_pred = nnModel.predict(x_train)
@@ -68,7 +68,7 @@ def nnModelFunction(iMin, iMax, iStep, jMin, jMax, jStep, sMin, sMax, sStep):
         for i in range(iMin, iMax, iStep):
             for j in range(jMin, jMax, jStep):
            
-                nnModel = mlrose.NeuralNetwork(hidden_nodes =[10],activation='sigmoid', algorithm=nnOptAlgos[y], max_iters = i, max_attempts=j,learning_rate = 0.01,early_stopping=True, random_state =10)
+                nnModel = mlrose.NeuralNetwork(hidden_nodes =[25],activation='sigmoid', algorithm=nnOptAlgos[y], max_iters = i, max_attempts=j,learning_rate = 0.001,early_stopping=True, random_state =10)
                 
                 nnModel.fit(x_train, y_train)
                 y_train_pred = nnModel.predict(x_train)
