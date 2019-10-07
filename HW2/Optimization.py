@@ -249,7 +249,7 @@ def plotGraphs(df,n1):
  
         
 if __name__ == "__main__":
-    optimizationFunction(100,1,102,20,5,30,5)
+    optimizationFunction(30,1,102,20,5,30,5)
    
     nnModelFunction(1,52,10,1,25,5,0.1,0.9,0.1)
     
