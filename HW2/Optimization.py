@@ -100,12 +100,12 @@ def nnGraphs(df, algoNames):
         if 'iterations' in df.columns:
             results2 = pd.pivot_table(df[(df.algorithm == algoNames[i])], values='test_accuracy', index='iterations', columns='attempts')
             results3 = pd.pivot_table(df[(df.algorithm == algoNames[i])], values='cv_test_accuracy', index='iterations', columns='attempts')    
-            plt.title(algoNames[i] + ', ' + 'Training Size (best test accuracy)')
+            plt.title(algoNames[i] + ', ' + 'Training Size that has best test accuracy')
             ax1 = sns.heatmap(results2, cmap = 'Greens')
             plt.savefig(algoNames[i] + ', ' + 'Training Size (best test accuracy).png')
             plt.clf()
             plt.figure()
-            plt.title(algoNames[i] + ', ' + 'Training Size (best CV test accuracy)')
+            plt.title(algoNames[i] + ', ' + 'Training Size that has best CV test accuracy')
             ax2 = sns.heatmap(results3, cmap = 'YlGnBu')
             plt.savefig(algoNames[i] + ', ' + 'Training Size (best CV test accuracy).png')
             plt.clf()
@@ -119,6 +119,8 @@ def nnGraphs(df, algoNames):
             plt.plot(results['training_size'], results['test_accuracy'], label = 'Test Accuracy')
             plt.plot(results['training_size'], results['cv_training_accuracy'], label = 'CV Training Accuracy')
             plt.plot(results['training_size'], results['cv_test_accuracy'], label = 'CV Test Accuracy')
+            plt.xlabel('Training Size')
+            plt.ylabel('Accuracy')
             plt.legend()
             plt.savefig(algoNames[i]+ ' Training size vs Accuracy' +'.png')
             
