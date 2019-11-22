@@ -11,4 +11,8 @@ For Forest Management pymdtoolbox needs to be installed. However, I modified the
 
 In Custom.py the Q-learning function uses the following parameters: 
 P, R, discount, learning rate, epsilon, min epsilon, max epsilon, decay rate
-mdptoolbox.mdp.QLearning(P, R, discount,0.3,0.5,0.01,0.3,-0.00005)
+
+Also, in Reinforcement.py the Q-learning function for the forest management process 
+uses the following parameters:
+P, R, discount, learning rate, epsilon, min epsilon, max epsilon, decay rate
+Example: mdptoolbox.mdp.QLearning(P, R, discount,0.3,0.5,0.01,0.3,-0.00005)
